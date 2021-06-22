@@ -1,7 +1,6 @@
 
 
-export async function getFakeData(queryObj) {
-    const numRecords = queryObj.queryKey[1].params.numRecords || 5 
+export async function getFakeData(key, numRecords=5) {
     const response = await fetch('/api/fakeData',{
         method: 'POST',
         headers: {

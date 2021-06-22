@@ -21,7 +21,7 @@ const MockDataTable = (props) => {
     const { numRecords } = props
 
     const { isLoading, error, data } = useQuery(
-        [`helloWorld-${numRecords}`, {params: {numRecords}}], 
+        [`helloWorld-${numRecords}`, numRecords], 
         getFakeData, 
         {keepPreviousData:true, enabled:true});
 
