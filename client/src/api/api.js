@@ -1,6 +1,6 @@
 
 
-export async function getFakeData(key, numRecords=5) {
+export async function getFakeData(numRecords) {
     const response = await fetch('/api/fakeData',{
         method: 'POST',
         headers: {

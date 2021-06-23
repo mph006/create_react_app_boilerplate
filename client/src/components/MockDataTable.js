@@ -22,7 +22,7 @@ const MockDataTable = (props) => {
 
     const { isLoading, error, data } = useQuery(
         [`helloWorld-${numRecords}`, numRecords], 
-        getFakeData, 
+        ()=>getFakeData(numRecords), 
         {keepPreviousData:true, enabled:true});
 
     let retElem = <div>Loading ...</div>

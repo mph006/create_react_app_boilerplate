@@ -22,7 +22,7 @@ test('<App/> (render): Row Picker', () => {
 });
 
 test('<MockDataTable/> (api)', async () => {
-  const data = await getFakeData('testing',10)
+  const data = await getFakeData(10)
   expect(data.length).toBeGreaterThan(0)
   expect(data[0].name !== undefined).toBe(true)
 });
