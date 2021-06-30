@@ -6,5 +6,5 @@ export type TableData = {
     readonly id: number
     readonly name: string
     readonly email: string
-    readonly body: boolean
+    readonly body: string
 }
