@@ -1,11 +1,12 @@
 import { useQuery } from "react-query";
 import { getFakeData } from "../api/api";
 import {Table} from 'antd'
+import { NumRecords, TableData } from '../types/tableExample';
 import '../styles/MockDataTable.css';
 
-const formatColumns = (data) => {
+const formatColumns = (data: TableData) => {
     if(!data){return []}
-    return Object.keys(data[0])
+    return Object.keys(data)
         .filter(d=>d!=='postId' && d!=='key')
         .map((d,i)=>{
             return {
@@ -16,7 +17,7 @@ const formatColumns = (data) => {
         })
 }
 
-const MockDataTable = (props) => {
+const MockDataTable = (props : {numRecords: NumRecords}) => {
 
     const { numRecords } = props
 
@@ -31,10 +32,9 @@ const MockDataTable = (props) => {
         retElem = <div>Error Fetching Data</div>
     }
     else if(!isLoading && data && data.length > 0){
-        const keyData = data.map((d,i)=>{d['key'] = i; return d})
         retElem = <Table 
-            columns={formatColumns(keyData)} 
-            dataSource={keyData} 
+            columns={formatColumns(data[0])} 
+            dataSource={data} 
             size="small" 
         />
     }
