@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import { Button } from 'antd'
 import TableExample from './pages/TableExample'
 import PhoneNumberExample from './pages/PhoneNumberExample'
+import BugBashExample from './pages/BugBashExample'
 import './styles/App.css';
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ function WrappedComponent() {
         <Button type='link' href="/">Home</Button>
         <Button type='link' href="/tableEx">Table Example</Button>
         <Button type='link' href="/phoneEx">Phone Number Input</Button>
+        <Button type='link' href="/bugBashEx">Bug Bash</Button>
     
         <Switch>
           <Route path="/tableEx">
@@ -32,6 +34,9 @@ function WrappedComponent() {
           </Route>
           <Route path="/phoneEx">
             <PhoneNumberExample />
+          </Route>
+          <Route path="/bugBashEx">
+            <BugBashExample />
           </Route>
           <Route path="/">
             <Home />

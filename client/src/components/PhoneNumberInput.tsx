@@ -22,7 +22,6 @@ const PhoneNumberInput = () => {
     const [phoneNumber, setPhoneNumber] = useState('')
 
     function handleInputChange(event: any){
-        
         //10 digits long at max, only numbers
         const cleanDigits = event.target.value.replace(/\D/g,'').substring(0,10)
         setPhoneNumber(decoratePhoneNumber(cleanDigits))
